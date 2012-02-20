@@ -13,3 +13,5 @@ define('DB_HOST', 'localhost');
 
 // debug?
 define('DEBUG', true);
+
+define('ABSPATH', dirname(__FILE__));
