@@ -2,8 +2,25 @@
 
 // User Class for user management using sessions
 // you need to use session start before initalizing this class
+/*
+CREATE TABLE `users` (
+`id` INT( 11 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`username` VARCHAR( 20 ) NOT NULL ,
+`password` VARCHAR( 40 ) NOT NULL ,
+`email` VARCHAR( 20 ) NULL DEFAULT NULL ,
+`fname` VARCHAR( 20 ) NULL DEFAULT NULL ,
+`lname` VARCHAR( 20 ) NULL DEFAULT NULL ,
+`hash` VARCHAR( 40 ) NOT NULL
+) ENGINE = InnoDB;
 
-
+CREATE TABLE `usermeta` (
+`id` BIGINT( 20 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`user_id` INT( 11 ) NOT NULL ,
+`key` VARCHAR( 64 ) NOT NULL ,
+`value` LONGTEXT NULL ,
+INDEX ( `user_id` , `meta_key` )
+) ENGINE = MYISAM ;
+*/
 
 Class User{
 	// basic vars for this class
@@ -16,8 +33,8 @@ Class User{
 	private $db;
 	
 	public function __construct($username = null, $password = null){
-		global $ODB;
-		$this->db = $ODB;
+		global $db;
+		$this->db = $db;
 		// if a username and password are provided then log the user in
 		if((isset($username) && $username != null) && (isset($password) && $password != null)){
 			$this->log_in($username, $password);
