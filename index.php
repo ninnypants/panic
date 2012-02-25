@@ -1,5 +1,5 @@
 <?php
-require 'config.php'
+require 'includes/load.php';
 ?>
 <!DOCTYPE html>
 <html>
