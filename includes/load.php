@@ -1,6 +1,6 @@
 <?php
 // load the config
-require '../config.php';
+require 'config.php';
 
 // include constants
 define('INC', ABSPATH.'/includes');
